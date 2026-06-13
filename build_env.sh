@@ -15,5 +15,21 @@ module load openmpi
 
 conda deactivate
 
-echo -n "creating conda environment with pymeep... "
+echo -n "Creating conda environment with pymeep... "
 conda create -n jmh -c conda-forge pymeep=*=mpi_mpich_*
+
+conda activate jmh
+
+echo -n "Cloning meow_MEEP repo... "
+cd ..
+rmdir /s "repos_PACE-FECES" 2>nul
+mkdir -p repos_PACE-FECES
+cd repos_PACE-FECES
+git clone https://github.com/jakeh13/meow_MEEP.git
+cd meow_MEEP
+pip install -e .
+cd ../../PACE-FECES
+
+echo -n "Installing various python packages... "
+pip install gdsfactory
+pip install dataconf

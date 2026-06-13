@@ -14,4 +14,4 @@ module load anaconda3
 module load openmpi
 
 conda deactivate
-conda env remove -n jmh
+conda activate jmh
