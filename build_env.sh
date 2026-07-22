@@ -33,3 +33,5 @@ cd ../../PACE-FECES
 echo -n "Installing various python packages... "
 pip install gdsfactory
 pip install dataconf
+pip install opencv-python
+pip install gdspy
