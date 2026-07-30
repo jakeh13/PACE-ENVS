@@ -22,13 +22,13 @@ conda activate jmh
 
 echo -n "Cloning meow_MEEP repo... "
 cd ..
-rmdir /s "repos_PACE-FECES" 2>nul
-mkdir -p repos_PACE-FECES
-cd repos_PACE-FECES
+rmdir /s "repos_PACE-ENVS" 2>nul
+mkdir -p repos_PACE-ENVS
+cd repos_PACE-ENVS
 git clone https://github.com/jakeh13/meow_MEEP.git
 cd meow_MEEP
 pip install -e .
-cd ../../PACE-FECES
+cd ../../PACE-ENVS
 
 echo -n "Installing various python packages... "
 pip install gdsfactory
