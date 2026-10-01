@@ -1,17 +1,7 @@
 #!/bin/bash
+# Usage:  bash PACE-ENVS/destroy_env.sh
+# Removes the `jmh` conda env (needed before build_env.sh can rebuild it).
 
-echo -n "Purging modules... "
-module purge
-echo "Done"
+source "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/modules.sh"
 
-echo -n "Loading relevant modules... "
-# module load gcc
-module load gcc
-module load swig/4.1.1
-module load openblas
-module load cmake
-module load anaconda3
-module load openmpi
-
-conda deactivate
-conda env remove -n jmh
+conda env remove -y -n jmh
